@@ -14,8 +14,15 @@ class ProdutoController extends Controller
     {
         // return "index";
 
-        $produtos = \App\Models\Produto::all();
-        return dd($produtos);
+        //$produtos = \App\Models\Produto::all();
+        //return dd($produtos);
+
+        $nome = "lucas";
+        $idade = 18;
+        $html = "<h1>Olá eu sou h1 </h1>";
+
+        return view('site/empresa', ['nome' => $nome, 'idade' => $idade, 'h1']);
+
     }
 
     /**
