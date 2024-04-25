@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\produto;
+use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
@@ -14,7 +14,7 @@ class ProdutoController extends Controller
     {
         // return "index";
 
-        $produtos = \App\Models\produto::all();
+        $produtos = \App\Models\Produto::all();
         return dd($produtos);
     }
 
