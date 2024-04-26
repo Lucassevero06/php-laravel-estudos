@@ -13,7 +13,7 @@ class ApiController extends Controller
      */
     public function index()
     {
-        return InvoiceResource::collection(InvoiceResource::all());
+        return InvoiceResource::collection(Invoice::all());
     }
 
     /**
