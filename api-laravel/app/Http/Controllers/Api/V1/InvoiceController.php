@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\InvoiceResource;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -12,7 +13,7 @@ class ApiController extends Controller
      */
     public function index()
     {
-        //
+        return InvoiceResource::collection(InvoiceResource::all());
     }
 
     /**

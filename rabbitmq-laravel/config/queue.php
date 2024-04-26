@@ -1,5 +1,13 @@
 <?php
 
+use App\Jobs\ProcessPodcast;
+ 
+// This job is sent to the default connection's default queue...
+ProcessPodcast::dispatch();
+ 
+// This job is sent to the default connection's "emails" queue...
+ProcessPodcast::dispatch()->onQueue('emails');
+
 return [
 
     /*
@@ -104,6 +112,12 @@ return [
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
         'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
+    ],
+
+    'listeners' => [
+        'Illuminate\Queue\Events\JobFailed' => [
+            App\Listeners\ProcessMessage::class,
+        ],
     ],
 
 ];
